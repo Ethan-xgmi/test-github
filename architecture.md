@@ -175,18 +175,3 @@ interface Operation {
     *   When a node is clicked, this pane shows a diff of the `upgrade` and `downgrade` operations for that revision.
 
 
-## 8. Extension Configuration
-
-The following settings will be available in the user's `settings.json` under the `alembicLens` namespace.
-
-*   `alembicLens.pythonPath`: Path to the Python executable. If not set, the extension will try to find a default Python interpreter.
-*   `alembicLens.venv`: Path to a virtual environment to use when running the Python sidecar.
-*   `alembicLens.autoFixOnSave`: (Future) Automatically run linting and fixing commands on save.
-
-
-## 9. Error Surfaces & Notifications
-
-*   **Invalid `pythonPath` or `venv`**: The extension will show an error notification with a button to open settings.
-*   **Alembic command errors**: Errors from `alembic` (e.g., multiple heads, merge conflicts) will be captured from the Python sidecar's stderr and displayed in an error notification.
-*   **IPC Failure**: If the Python sidecar crashes or fails to respond, a "Sidecar process terminated unexpectedly" error will be shown.
-*   **Graph Rendering Issues**: Errors in the webview's JavaScript will be logged to the developer console.
